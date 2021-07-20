@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.mvvmkotlin.R
 
@@ -19,8 +20,7 @@ class addUserFragment : Fragment() {
         fun newInstance() = addUserFragment()
     }
 
-    private lateinit var viewModel: AddUserViewModel
-
+    private val viewModel: AddUserViewModel by activityViewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.add_user_fragment, container, false)
@@ -45,10 +45,10 @@ class addUserFragment : Fragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
+    /*override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(AddUserViewModel::class.java)
         // TODO: Use the ViewModel
-    }
+    }*/
 
 }
