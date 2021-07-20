@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.adminFragment">
+
+    <Button
+        android:id="@+id/addUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Merchant Registration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <Button
+        android:id="@+id/ListUsers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="List all Merchants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/addUser"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/addUser"
+        app:layout_constraintTop_toBottomOf="@+id/addUser"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/DeleteUser"
+        android:layout_width="213dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="396dp"
+        android:text="Delete Merchant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ListUsers"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="@+id/ListUsers" />
+
+    <Button
+        android:id="@+id/addBankBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add bank to Merchant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/DeleteUser"
+        app:layout_constraintStart_toStartOf="@+id/DeleteUser"
+        app:layout_constraintTop_toBottomOf="@+id/DeleteUser"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <Button
+        android:id="@+id/removeBankBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove bank from Merchant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/addBankBtn"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="@+id/addBankBtn"
+        app:layout_constraintTop_toBottomOf="@+id/addBankBtn"
+        app:layout_constraintVertical_bias="0.147" />
+
+    <Button
+        android:id="@+id/ActiveDeactiveBanks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activate/Deactivate Banks"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/removeBankBtn"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toStartOf="@+id/removeBankBtn"
+        app:layout_constraintTop_toBottomOf="@+id/removeBankBtn"
+        app:layout_constraintVertical_bias="0.272" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
