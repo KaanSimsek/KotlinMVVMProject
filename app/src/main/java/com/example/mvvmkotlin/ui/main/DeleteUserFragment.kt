@@ -6,27 +6,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import com.example.mvvmkotlin.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DeleteUserFragment : Fragment() {
 
     companion object {
         fun newInstance() = DeleteUserFragment()
     }
 
-    private lateinit var viewModel: DeleteUserViewModel
+    private val viewModel: DeleteUserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.delete_user_fragment, container, false)
-    }
+        var view=inflater.inflate(R.layout.delete_user_fragment, container, false)
+        view.findViewById<Button>(R.id.backFromDeleteUser).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_deleteUserFragment_to_adminFragment)
+        }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DeleteUserViewModel::class.java)
-        // TODO: Use the ViewModel
+        view.findViewById<Button>(R.id.deleteUserBtn).setOnClickListener {
+            viewModel.deleteUserBtn(view.findViewById<EditText>(R.id.deleteWithTerminalET).text.toString())
+        }
+        return view
     }
 
 }

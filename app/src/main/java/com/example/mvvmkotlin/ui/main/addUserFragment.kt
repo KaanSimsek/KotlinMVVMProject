@@ -13,7 +13,9 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.mvvmkotlin.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class addUserFragment : Fragment() {
 
     companion object {
@@ -37,7 +39,6 @@ class addUserFragment : Fragment() {
             else{
                 Log.v("Data","False")
             }
-            //viewModel.addUserBtn()
         }
         view.findViewById<Button>(R.id.backFromUAdd).setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_addUserFragment_to_adminFragment)

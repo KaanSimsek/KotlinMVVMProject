@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.mvvmkotlin.DataBaseHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+
 @HiltViewModel
 class AddUserViewModel @Inject constructor(private val dataBaseHelper: DataBaseHelper): ViewModel() {
 

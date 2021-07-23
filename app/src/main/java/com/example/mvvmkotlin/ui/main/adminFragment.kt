@@ -43,7 +43,22 @@ class adminFragment : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_addUserFragment)
         }
 
+        view.findViewById<Button>(R.id.ListUsers).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_listUserFragment)
+        }
 
+        view.findViewById<Button>(R.id.DeleteUser).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_deleteUserFragment)
+        }
+        view.findViewById<Button>(R.id.addBankBtn).setOnClickListener {
+
+        }
+        view.findViewById<Button>(R.id.removeBankBtn).setOnClickListener {
+
+        }
+        view.findViewById<Button>(R.id.ActiveDeactiveBanks).setOnClickListener {
+
+        }
         return view
     }
 

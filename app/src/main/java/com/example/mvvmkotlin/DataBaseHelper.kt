@@ -44,7 +44,7 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
-        if (oldVersion < 2) {
+        if (oldVersion < 3) {
             db?.execSQL("ALTER TABLE " + user_table + " ADD COLUMN  " + col_bankName +" VARCHAR(250)")
             db?.execSQL("ALTER TABLE " + user_table + " ADD COLUMN " + col_bankActiveOrNot + " VARCHAR(250)")
         }
@@ -60,8 +60,8 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
         cv.put(col_DeviceType, user.deviceType)
         cv.put(col_trID, user.trID)
         cv.put(col_registerDate, user.registerDate)
-        cv.put(col_bankName,"")
-        cv.put(col_bankActiveOrNot,"")
+        //cv.put(col_bankName,"")
+        //cv.put(col_bankActiveOrNot,"")
         var result=db.insert(user_table, null, cv)
         if(result==(1).toLong()){
             Toast.makeText(context, "Unsuccess", Toast.LENGTH_LONG).show()
@@ -100,6 +100,9 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
         var db = this.writableDatabase
         val success= db.delete(user_table, col_TerminalId + "=?", arrayOf(terminalID))
         db.close()
+        if(Integer.parseInt("$success")==-1){
+            Toast.makeText(context,"User can not deleted",Toast.LENGTH_SHORT).show()
+        }
         return Integer.parseInt("$success")!=-1
     }
 
