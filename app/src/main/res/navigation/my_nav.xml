@@ -28,6 +28,15 @@
         <action
             android:id="@+id/action_adminFragment_to_listUserFragment"
             app:destination="@id/listUserFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_addBankToUser"
+            app:destination="@id/addBankToUser" />
+        <action
+            android:id="@+id/action_adminFragment_to_deleteBankFromUserFragment3"
+            app:destination="@id/deleteBankFromUserFragment3" />
+        <action
+            android:id="@+id/action_adminFragment_to_activateDeactivateBankFragment"
+            app:destination="@id/activateDeactivateBankFragment" />
     </fragment>
     <fragment
         android:id="@+id/addUserFragment"
@@ -54,6 +63,33 @@
         tools:layout="@layout/list_user_fragment" >
         <action
             android:id="@+id/action_listUserFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBankToUser"
+        android:name="com.example.mvvmkotlin.ui.main.addBankToUser"
+        android:label="add_bank_to_user_fragment"
+        tools:layout="@layout/add_bank_to_user_fragment" >
+        <action
+            android:id="@+id/action_addBankToUser_to_adminFragment"
+            app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteBankFromUserFragment3"
+        android:name="com.example.mvvmkotlin.ui.main.deleteBankFromUserFragment"
+        android:label="delete_bank_from_user_fragment"
+        tools:layout="@layout/delete_bank_from_user_fragment" >
+        <action
+            android:id="@+id/action_deleteBankFromUserFragment3_to_adminFragment"
+            app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activateDeactivateBankFragment"
+        android:name="com.example.mvvmkotlin.ui.main.ActivateDeactivateBankFragment"
+        android:label="activate_deactivate_bank_fragment"
+        tools:layout="@layout/activate_deactivate_bank_fragment" >
+        <action
+            android:id="@+id/action_activateDeactivateBankFragment_to_adminFragment"
             app:destination="@id/adminFragment" />
     </fragment>
 </navigation>

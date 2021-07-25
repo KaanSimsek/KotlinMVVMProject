@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.main.ActivateDeactivateBankFragment">
+
+    <EditText
+        android:id="@+id/takeTerminalIdActivateBank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter terminal ID"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <CheckBox
+        android:id="@+id/yapikrediCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yapkredi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/takeTerminalIdActivateBank"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/takeTerminalIdActivateBank"
+        app:layout_constraintTop_toBottomOf="@+id/takeTerminalIdActivateBank"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <CheckBox
+        android:id="@+id/denizBankCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Deniz Bank"
+        app:layout_constraintEnd_toEndOf="@+id/yapikrediCheckBox"
+        app:layout_constraintStart_toStartOf="@+id/yapikrediCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/yapikrediCheckBox" />
+
+    <CheckBox
+        android:id="@+id/isBankasiCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="İş bankası"
+        app:layout_constraintEnd_toEndOf="@+id/denizBankCheckBox"
+        app:layout_constraintStart_toStartOf="@+id/denizBankCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/denizBankCheckBox" />
+
+    <CheckBox
+        android:id="@+id/vakifBankCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Vakıf bank"
+        app:layout_constraintEnd_toEndOf="@+id/isBankasiCheckBox"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/isBankasiCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/isBankasiCheckBox" />
+
+    <Button
+        android:id="@+id/activateBankBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vakifBankCheckBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vakifBankCheckBox"
+        app:layout_constraintVertical_bias="0.217" />
+
+    <Button
+        android:id="@+id/deActivateBankBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="Deactivate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vakifBankCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/vakifBankCheckBox"
+        app:layout_constraintVertical_bias="0.217" />
+
+    <Button
+        android:id="@+id/backFromActivateBank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="168dp"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deActivateBankBtn"
+        app:layout_constraintStart_toEndOf="@+id/activateBankBtn"
+        app:layout_constraintTop_toBottomOf="@+id/vakifBankCheckBox"
+        app:layout_constraintVertical_bias="0.162" />
+</androidx.constraintlayout.widget.ConstraintLayout>

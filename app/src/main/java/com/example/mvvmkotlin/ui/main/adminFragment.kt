@@ -51,13 +51,13 @@ class adminFragment : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_deleteUserFragment)
         }
         view.findViewById<Button>(R.id.addBankBtn).setOnClickListener {
-
+            Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_addBankToUser)
         }
         view.findViewById<Button>(R.id.removeBankBtn).setOnClickListener {
-
+            Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_deleteBankFromUserFragment3)
         }
         view.findViewById<Button>(R.id.ActiveDeactiveBanks).setOnClickListener {
-
+            Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_activateDeactivateBankFragment)
         }
         return view
     }

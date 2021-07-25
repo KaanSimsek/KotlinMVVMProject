@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.deleteBankFromUserFragment">
+
+    <Button
+    android:id="@+id/buttonForDelBank"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="376dp"
+    android:text="Delete Bank"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/getTerminalIdOfUserDel"
+    app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+    android:id="@+id/backFDeleteBank"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="36dp"
+    android:text="back"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/backFAddBank"
+    app:layout_constraintHorizontal_bias="0.476"
+    app:layout_constraintStart_toStartOf="@+id/backFAddBank"
+    app:layout_constraintTop_toBottomOf="@+id/backFAddBank"
+    app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+    android:id="@+id/getTerminalIdOfUserDel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:hint="Enter terminal ID"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.093" />
+
+    <RadioGroup
+    android:id="@+id/radioGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteX="173dp"
+    tools:layout_editor_absoluteY="236dp"
+    tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@+id/backFAddBank"
+    app:layout_constraintEnd_toEndOf="@+id/getTerminalIdOfUserDel"
+    app:layout_constraintStart_toStartOf="@+id/getTerminalIdOfUserDel"
+    app:layout_constraintTop_toBottomOf="@+id/getTerminalIdOfUserDel">
+
+    <RadioButton
+        android:id="@+id/yapiKrediDelRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yapıkredi" />
+
+    <RadioButton
+        android:id="@+id/denizBankDelRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Deniz Bank" />
+
+    <RadioButton
+        android:id="@+id/isBankasiDelRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="İş bankası" />
+
+    <RadioButton
+        android:id="@+id/vakifBankDelRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Vakıf Bankası" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
