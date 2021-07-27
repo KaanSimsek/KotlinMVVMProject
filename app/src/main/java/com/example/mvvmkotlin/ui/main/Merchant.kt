@@ -3,37 +3,36 @@ package com.example.mvvmkotlin.ui.main
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Merchant(name:String? = "",password:String? = "",terminalID : String? = "",trID : String? = "",deviceType : String? = "",registerDate : String? = "") {
-    lateinit var name : String
-    lateinit var password : String
-    lateinit var terminalID : String
-    lateinit var trID : String
-    lateinit var deviceType : String
-    lateinit var registerDate : String
-    lateinit var id : String
+class Merchant(private var name:String ="", private var password:String = "", private var terminalID : String = "", private var trID : String = "", private var deviceType : String? = "",private var registerDate : String? = "") {
+    /*private lateinit var name : String
+    private lateinit var password : String
+    private lateinit var terminalID : String
+    private lateinit var trID : String
+    private lateinit var deviceType : String
+    private lateinit var registerDate : String
+    private lateinit var id : String*/
+
     val specialChars= ArrayList<Char>()
-    init {
+   /* init {
         this.name = name!!
         this.password = password!!
         this.terminalID = terminalID!!
         this.trID = trID!!
         this.deviceType = deviceType!!
         this.registerDate = registerDate!!
-    }
+    }*/
 
     fun isNewUserValid(user:Merchant) : Merchant{
         val date = Calendar.getInstance().time
         val formatter = SimpleDateFormat.getDateTimeInstance() //or use getDateInstance()
         val formatedDate = formatter.format(date)
+
         if(checkPassword(user.password) && checkTerminal(user.terminalID) && !checkDeviceType(user.terminalID).equals("False") && user.name.length!=0 && user.trID.length!=0){
             return Merchant(user.name,user.password,user.terminalID,user.trID,checkDeviceType(user.terminalID),formatedDate)
         }
-        return Merchant()
+        return null!!
     }
 
-    fun loginOfUser() : Boolean{
-        return false
-    }
     private fun checkPassword(password : String):Boolean{
         specialCharInit()
         if(password.length<=18 && password.length>=6){
@@ -111,5 +110,51 @@ class Merchant(name:String? = "",password:String? = "",terminalID : String? = ""
         specialChars.add('&')
         specialChars.add('´')
         specialChars.add('¨')
+    }
+
+    override fun toString(): String {
+        return "Merchant(name='$name', password='$password', terminalID='$terminalID', trID='$trID', deviceType='$deviceType', registerDate=$registerDate)\n"
+    }
+
+
+    fun getName():String{
+        return this.name
+    }
+
+    fun getPassword():String{
+        return this.password
+    }
+    fun getTerminalID():String{
+        return this.terminalID
+    }
+    fun getTRID():String{
+        return this.trID
+    }
+    fun getDeviceType(): String? {
+        return this.deviceType
+    }
+    fun getRegisterDate(): String? {
+        return this.registerDate
+    }
+
+
+    fun setName(name:String){
+        this.name=name
+    }
+
+    fun setPassword(password: String){
+        this.password=password
+    }
+    fun setTerminalID(terminalID: String){
+        this.terminalID=terminalID
+    }
+    fun setTRID(trID: String){
+        this.trID=trID
+    }
+    fun setDeviceType(deviceType: String?) {
+        this.deviceType=deviceType
+    }
+    fun setRegisterDate(registerDate: String?) {
+        this.registerDate=registerDate
     }
 }

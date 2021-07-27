@@ -29,7 +29,7 @@ class ActivateDeactivateBankFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var bankNames = ArrayList<String>()
+        val bankNames = ArrayList<String>()
         binding.activateBankBtn.setOnClickListener {
             if(binding.yapikrediCheckBox.isChecked)
                 bankNames.add("Yapıkredi")

@@ -1,16 +1,11 @@
 package com.example.mvvmkotlin.ui.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil.setContentView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.mvvmkotlin.R
@@ -28,7 +23,6 @@ class addUserFragment : Fragment() {
     private lateinit var binding : AddUserFragmentBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var view = inflater.inflate(R.layout.add_user_fragment, container, false)
         binding= AddUserFragmentBinding.inflate(layoutInflater)
         return binding.root
         /*view.findViewById<Button>(R.id.add).setOnClickListener {
@@ -63,7 +57,7 @@ class addUserFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.add.setOnClickListener {
-            if(viewModel.addUserBtn(Merchant(binding.userName.text.toString(),binding.userPassword.text.toString(),binding.userTerminalID.text.toString(),binding.userTC.text.toString(),"",""))){
+            if(viewModel.addUserBtn(Merchant(binding.userName.text.toString(),binding.userPassword.text.toString(),binding.userTerminalID.text.toString(),binding.userTC.text.toString()))){
                 Log.v("Data","True")
             }
             else{

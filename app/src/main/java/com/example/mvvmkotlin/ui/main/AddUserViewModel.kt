@@ -11,7 +11,7 @@ class AddUserViewModel @Inject constructor(private val dataBaseHelper: DataBaseH
 
     fun addUserBtn(merchant: Merchant):Boolean{
         var merch = merchant.isNewUserValid(merchant)
-        if(merch.name.length!=0){
+        if(merch!=null){
             if (dataBaseHelper.insertData(merch)){
                 return true
             }

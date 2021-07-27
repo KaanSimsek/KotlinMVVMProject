@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.UserDataFragment">
+
+    <ListView
+        android:id="@+id/listForUser"
+        android:layout_width="253dp"
+        android:layout_height="329dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/welcomeToToken"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/welcomeToToken"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeToToken"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/welcomeToToken"
+        android:layout_width="236dp"
+        android:layout_height="43dp"
+        android:gravity="center_horizontal"
+        android:text="Welcome To Token"
+        android:textColor="#2196F3"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <ListView
+        android:id="@+id/userBankList"
+        android:layout_width="263dp"
+        android:layout_height="265dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/listForUser"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/listForUser"
+        app:layout_constraintTop_toBottomOf="@+id/listForUser"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

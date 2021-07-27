@@ -37,7 +37,7 @@ class adminFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view=inflater.inflate(R.layout.fragment_admin, container, false)
+        val view=inflater.inflate(R.layout.fragment_admin, container, false)
 
         view.findViewById<Button>(R.id.addUser).setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_adminFragment_to_addUserFragment)

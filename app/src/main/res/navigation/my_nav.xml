@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_adminFragment"
             app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
     <fragment
         android:id="@+id/adminFragment"
@@ -67,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/addBankToUser"
-        android:name="com.example.mvvmkotlin.ui.main.addBankToUser"
+        android:name="com.example.mvvmkotlin.ui.main.AddBankToUser"
         android:label="add_bank_to_user_fragment"
         tools:layout="@layout/add_bank_to_user_fragment" >
         <action
@@ -76,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/deleteBankFromUserFragment3"
-        android:name="com.example.mvvmkotlin.ui.main.deleteBankFromUserFragment"
+        android:name="com.example.mvvmkotlin.ui.main.DeleteBankFromUserFragment"
         android:label="delete_bank_from_user_fragment"
         tools:layout="@layout/delete_bank_from_user_fragment" >
         <action
@@ -91,5 +94,23 @@
         <action
             android:id="@+id/action_activateDeactivateBankFragment_to_adminFragment"
             app:destination="@id/adminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.mvvmkotlin.ui.main.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_userDataFragment"
+            app:destination="@id/userDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDataFragment"
+        android:name="com.example.mvvmkotlin.ui.main.UserDataFragment"
+        android:label="user_data_fragment"
+        tools:layout="@layout/user_data_fragment" >
+        <action
+            android:id="@+id/action_userDataFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
 </navigation>

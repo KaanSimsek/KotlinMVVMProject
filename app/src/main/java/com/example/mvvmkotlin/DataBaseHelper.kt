@@ -54,12 +54,12 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
 
         val db=this.writableDatabase
         val cv= ContentValues()
-        cv.put(col_name, user.name)
-        cv.put(col_password, user.password)
-        cv.put(col_TerminalId, user.terminalID)
-        cv.put(col_DeviceType, user.deviceType)
-        cv.put(col_trID, user.trID)
-        cv.put(col_registerDate, user.registerDate)
+        cv.put(col_name, user.getName())
+        cv.put(col_password, user.getPassword())
+        cv.put(col_TerminalId, user.getTerminalID())
+        cv.put(col_DeviceType, user.getDeviceType())
+        cv.put(col_trID, user.getTerminalID())
+        cv.put(col_registerDate, user.getRegisterDate())
         cv.put(col_bankName,"")
         cv.put(col_bankActiveOrNot,"")
         var result=db.insert(user_table, null, cv)
@@ -81,13 +81,13 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
         if(res.moveToFirst()){
             do {
                 var merchant = Merchant()
-                merchant.id = res.getString(res.getColumnIndex(col_id))
-                merchant.name=res.getString(res.getColumnIndex(col_name))
-                merchant.password=res.getString(res.getColumnIndex(col_password))
-                merchant.terminalID=res.getString(res.getColumnIndex(col_TerminalId))
-                merchant.deviceType=res.getString(res.getColumnIndex(col_DeviceType))
-                merchant.trID=res.getString(res.getColumnIndex(col_trID))
-                merchant.registerDate=res.getString(res.getColumnIndex(col_registerDate))
+                merchant.setTerminalID( res.getString(res.getColumnIndex(col_id)))
+                merchant.setName(res.getString(res.getColumnIndex(col_name)))
+                merchant.setPassword(res.getString(res.getColumnIndex(col_password)))
+                merchant.setTerminalID(res.getString(res.getColumnIndex(col_TerminalId)))
+                merchant.setDeviceType( res.getString(res.getColumnIndex(col_DeviceType)))
+                merchant.setTRID(res.getString(res.getColumnIndex(col_trID)))
+                merchant.setRegisterDate(res.getString(res.getColumnIndex(col_registerDate)))
                 listOfTable.add(merchant)
             }while (res.moveToNext())
         }
@@ -119,13 +119,13 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
         if (res.moveToFirst()){
             do {
                 if(res.getString(res.getColumnIndex(col_TerminalId)).equals(userTerminalID)){
-                    merchant.id = res.getString(res.getColumnIndex(col_id))
-                    merchant.name=res.getString(res.getColumnIndex(col_name))
-                    merchant.password=res.getString(res.getColumnIndex(col_password))
-                    merchant.terminalID=res.getString(res.getColumnIndex(col_TerminalId))
-                    merchant.deviceType=res.getString(res.getColumnIndex(col_DeviceType))
-                    merchant.trID=res.getString(res.getColumnIndex(col_trID))
-                    merchant.registerDate=res.getString(res.getColumnIndex(col_registerDate))
+                    merchant.setTerminalID( res.getString(res.getColumnIndex(col_id)))
+                    merchant.setName(res.getString(res.getColumnIndex(col_name)))
+                    merchant.setPassword(res.getString(res.getColumnIndex(col_password)))
+                    merchant.setTerminalID(res.getString(res.getColumnIndex(col_TerminalId)))
+                    merchant.setDeviceType( res.getString(res.getColumnIndex(col_DeviceType)))
+                    merchant.setTRID(res.getString(res.getColumnIndex(col_trID)))
+                    merchant.setRegisterDate(res.getString(res.getColumnIndex(col_registerDate)))
                     bankUser=res.getString(res.getColumnIndex(col_bankName))
                     userBankActive=res.getString(res.getColumnIndex(col_bankActiveOrNot))
                 }
@@ -146,12 +146,12 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
                 bankUser += "," + bank.bankName
                 userBankActive += ",false"
             }
-            cv.put(col_name, merchant.name)
-            cv.put(col_password, merchant.password)
-            cv.put(col_TerminalId, merchant.terminalID)
-            cv.put(col_DeviceType, merchant.deviceType)
-            cv.put(col_trID, merchant.trID)
-            cv.put(col_registerDate, merchant.registerDate)
+            cv.put(col_name, merchant.getName())
+            cv.put(col_password, merchant.getPassword())
+            cv.put(col_TerminalId, merchant.getTerminalID())
+            cv.put(col_DeviceType, merchant.getDeviceType())
+            cv.put(col_trID, merchant.getTerminalID())
+            cv.put(col_registerDate, merchant.getRegisterDate())
             cv.put(col_bankName, bankUser)
             cv.put(col_bankActiveOrNot, userBankActive)
             val success = db.update(user_table, cv, col_TerminalId + "=?", arrayOf(userTerminalID)).toLong()
@@ -182,13 +182,13 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
         if (res.moveToFirst()){
             do {
                 if(res.getString(res.getColumnIndex(col_TerminalId)).equals(userTerminalID)){
-                    merchant.id = res.getString(res.getColumnIndex(col_id))
-                    merchant.name=res.getString(res.getColumnIndex(col_name))
-                    merchant.password=res.getString(res.getColumnIndex(col_password))
-                    merchant.terminalID=res.getString(res.getColumnIndex(col_TerminalId))
-                    merchant.deviceType=res.getString(res.getColumnIndex(col_DeviceType))
-                    merchant.trID=res.getString(res.getColumnIndex(col_trID))
-                    merchant.registerDate=res.getString(res.getColumnIndex(col_registerDate))
+                    merchant.setTerminalID( res.getString(res.getColumnIndex(col_id)))
+                    merchant.setName(res.getString(res.getColumnIndex(col_name)))
+                    merchant.setPassword(res.getString(res.getColumnIndex(col_password)))
+                    merchant.setTerminalID(res.getString(res.getColumnIndex(col_TerminalId)))
+                    merchant.setDeviceType( res.getString(res.getColumnIndex(col_DeviceType)))
+                    merchant.setTRID(res.getString(res.getColumnIndex(col_trID)))
+                    merchant.setRegisterDate(res.getString(res.getColumnIndex(col_registerDate)))
                     bankUser=res.getString(res.getColumnIndex(col_bankName))
                     userBankActive=res.getString(res.getColumnIndex(col_bankActiveOrNot))
                 }
@@ -200,12 +200,12 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
         if(userBankList.contains(bank.bankName)){
             userBankActiveList.removeAt(userBankList.indexOf(bank.bankName))
             userBankList.remove(bank.bankName)
-            cv.put(col_name, merchant.name)
-            cv.put(col_password, merchant.password)
-            cv.put(col_TerminalId, merchant.terminalID)
-            cv.put(col_DeviceType, merchant.deviceType)
-            cv.put(col_trID, merchant.trID)
-            cv.put(col_registerDate, merchant.registerDate)
+            cv.put(col_name, merchant.getName())
+            cv.put(col_password, merchant.getPassword())
+            cv.put(col_TerminalId, merchant.getTerminalID())
+            cv.put(col_DeviceType, merchant.getDeviceType())
+            cv.put(col_trID, merchant.getTerminalID())
+            cv.put(col_registerDate, merchant.getRegisterDate())
             cv.put(col_bankName,convertListToStr(userBankList))
             cv.put(col_bankActiveOrNot,convertListToStr(userBankActiveList))
             val success=db.update(user_table,cv, col_TerminalId + "=?", arrayOf(userTerminalID)).toLong()
@@ -250,13 +250,13 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
         if (res.moveToFirst()) {
             do {
                 if (res.getString(res.getColumnIndex(col_TerminalId)).equals(userTerminalID)) {
-                    merchant.id = res.getString(res.getColumnIndex(col_id))
-                    merchant.name = res.getString(res.getColumnIndex(col_name))
-                    merchant.password = res.getString(res.getColumnIndex(col_password))
-                    merchant.terminalID = res.getString(res.getColumnIndex(col_TerminalId))
-                    merchant.deviceType = res.getString(res.getColumnIndex(col_DeviceType))
-                    merchant.trID = res.getString(res.getColumnIndex(col_trID))
-                    merchant.registerDate = res.getString(res.getColumnIndex(col_registerDate))
+                    merchant.setTerminalID( res.getString(res.getColumnIndex(col_id)))
+                    merchant.setName(res.getString(res.getColumnIndex(col_name)))
+                    merchant.setPassword(res.getString(res.getColumnIndex(col_password)))
+                    merchant.setTerminalID(res.getString(res.getColumnIndex(col_TerminalId)))
+                    merchant.setDeviceType( res.getString(res.getColumnIndex(col_DeviceType)))
+                    merchant.setTRID(res.getString(res.getColumnIndex(col_trID)))
+                    merchant.setRegisterDate(res.getString(res.getColumnIndex(col_registerDate)))
                     bankUser = res.getString(res.getColumnIndex(col_bankName))
                     userBankActive = res.getString(res.getColumnIndex(col_bankActiveOrNot))
                 }
@@ -288,12 +288,12 @@ class DataBaseHelper @Inject constructor(@ApplicationContext private val context
             }
         }
 
-        cv.put(col_name, merchant.name)
-        cv.put(col_password, merchant.password)
-        cv.put(col_TerminalId, merchant.terminalID)
-        cv.put(col_DeviceType, merchant.deviceType)
-        cv.put(col_trID, merchant.trID)
-        cv.put(col_registerDate, merchant.registerDate)
+        cv.put(col_name, merchant.getName())
+        cv.put(col_password, merchant.getPassword())
+        cv.put(col_TerminalId, merchant.getTerminalID())
+        cv.put(col_DeviceType, merchant.getDeviceType())
+        cv.put(col_trID, merchant.getTerminalID())
+        cv.put(col_registerDate, merchant.getRegisterDate())
         cv.put(col_bankName,bankUser)
         cv.put(col_bankActiveOrNot,convertListToStr(userBankActiveList))
 

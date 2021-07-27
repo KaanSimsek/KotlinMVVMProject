@@ -1,6 +1,7 @@
 package com.example.mvvmkotlin.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +26,7 @@ class mainFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    lateinit var binding: FragmentMainBinding
+    private lateinit var binding: FragmentMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,13 +42,18 @@ class mainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view=inflater.inflate(R.layout.fragment_main, container, false)
-        view.findViewById<Button>(R.id.Admin).setOnClickListener {
+        binding=FragmentMainBinding.inflate(layoutInflater)
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.Admin.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_adminFragment)
         }
-        return view
+        binding.User.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_userFragment)
+        }
     }
-
     companion object {
         /**
          * Use this factory method to create a new instance of

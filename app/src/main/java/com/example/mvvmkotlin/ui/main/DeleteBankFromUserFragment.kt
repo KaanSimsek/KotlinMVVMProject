@@ -1,7 +1,5 @@
 package com.example.mvvmkotlin.ui.main
 
-import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,13 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.mvvmkotlin.R
-import com.example.mvvmkotlin.databinding.AddBankToUserFragmentBinding
 import com.example.mvvmkotlin.databinding.DeleteBankFromUserFragmentBinding
 
-class deleteBankFromUserFragment : Fragment() {
+class DeleteBankFromUserFragment : Fragment() {
 
     companion object {
-        fun newInstance() = deleteBankFromUserFragment()
+        fun newInstance() = DeleteBankFromUserFragment()
     }
 
     private val viewModel: BankTransactionViewModel by activityViewModels()

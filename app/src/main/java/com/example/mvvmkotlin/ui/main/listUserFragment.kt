@@ -46,7 +46,7 @@ class listUserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = activity as Context
-        var listOfMerchant=viewModel.listUserBtn()
+        val listOfMerchant=viewModel.listUserBtn()
         val adapter = ArrayAdapter<String>(activity,android.R.layout.simple_list_item_1,listOfMerchant)
         binding.usersList.adapter=adapter
         binding.backButtonForList.setOnClickListener {
